@@ -2,13 +2,36 @@
   "name": "chess-puzzles",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/app.js",
   "dependencies": {
+    "angular": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "chess.js": "^0.10.2",
+    "chessboardjs": "0.0.1",
     "pgnToJSON": "^0.0.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "gh-pages": "^1.0.0",
+    "html-loader": "^0.5.0",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": " webpack",
+    "dev": "webpack-dev-server --inline",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
