@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 const baseUrl = 'https://radiant-scrubland-69864.herokuapp.com';
 function PuzzleService($http) {
-  const postUrl = `${baseUrl/puzzles}`;
+  const puzzleUrl = `${baseUrl/puzzles}`;
   return {
     get: get,
     getOne: getOne,
@@ -11,24 +11,36 @@ function PuzzleService($http) {
   };
 
   function get() {
-    return $http.get(postUrl)
-                .then(response = response.data.puzzles);
+    const config = getHeaderConfig();
+    return $http.get(puzzleUrl, config)
+                .then(response => response.data.puzzles);
   }
 
   function getOne(puzzleId) {
-    return $http.get(`${postUrl}/${puzzleId}`)
+    const config = getHeaderConfig();
+    return $http.get(`${puzzleUrl}/${puzzleId}`, config)
                 .then(response => response.data.puzzles[0]);
   }
 
   function create(puzzle) {
-    return $http.post(postUrl, puzzle);
+    const config = getHeaderConfig();
+    return $http.post(puzzleUrl, puzzle, config);
   }
 
   function deleteOne(puzzleId) {
-    return $http.delete(`${postUrl}/${puzzleId}`);
+    const config = getHeaderConfig();
+    return $http.delete(`${puzzleUrl}/${puzzleId}`, config);
+  }
+
+  function getHeaderConfig() {
+    return {
+      headers: {
+        Authorization: 'Bearer ' + auth.getToken()
+      }
+    };
   }
 }
 
-PuzzleService.$inject =[`$http`];
+PuzzleService.$inject =['$http', 'auth'];
 
 module.exports = PuzzleService;

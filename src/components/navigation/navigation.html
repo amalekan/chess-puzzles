@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li><a href="#!">Home</a></li>
+    <li ng-if='$ctrl.isNotLoggedIn()'><a href="#!/register">Register</a></li>
+    <li ng-if='$ctrl.isNotLoggedIn()'><a href="#!/login">Login</a></li>
+    <li ng-if='$ctrl.isLoggedIn()'><a href="#!/profile">Profile</a></li>
+    <li ng-if='$ctrl.isLoggedIn()'><a href="#!/create">Create</a></li>
+    <li ng-if='$ctrl.isLoggedIn()'><a href="#!/start">Start</a></li>
+    <li ng-if='$ctrl.isLoggedIn()'><logout></logout></li>
+  </ul>
+</nav>

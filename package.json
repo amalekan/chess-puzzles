@@ -5,6 +5,7 @@
   "main": "./src/app.js",
   "dependencies": {
     "angular": "^1.6.5",
+    "angular-jwt": "^0.1.9",
     "angular-route": "^1.6.5",
     "chess.js": "^0.10.2",
     "chessboardjs": "0.0.1",
