@@ -1,12 +1,11 @@
 /*jshint esversion: 6 */
 const baseUrl = 'https://radiant-scrubland-69864.herokuapp.com';
 function PuzzleService($http) {
-  const puzzleUrl = `${baseUrl/puzzles}`;
+  const puzzleUrl = `${baseUrl}/puzzles`;
   return {
     get: get,
     getOne: getOne,
     create: create,
-    update: update,
     delete: deleteOne
   };
 

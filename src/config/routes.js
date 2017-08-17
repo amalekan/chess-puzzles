@@ -33,6 +33,15 @@ function RouterConfig($routeProvider) {
         protected: true
       }
     })
+    .when('/start', {
+      template:'<start puzzles ="$resolve.puzzleData"></start>',
+      // resolve: {
+      //   puzzleData: PuzzleDataResolve
+      // },
+      access: {
+        protected: true
+      }
+    })
     .otherwise({
       redirectTo: '/',
       access: {

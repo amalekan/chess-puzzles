@@ -2,7 +2,7 @@ const angular = require('angular');
 const ngRoute = require('angular-route');
 const angularJwt = require('angular-jwt');
 //components
-const BoardComponent = require('./components/chess-board');
+const StartComponent = require('./components/start');
 const CreateComponent = require('./components/create-puzzle');
 const HomeComponent = require('./components/home');
 const NavigationComponent = require('./components/navigation');
@@ -21,7 +21,7 @@ const RouteProtector = require('./config/protect-routes');
 angular.module('chessPuzzles', [ ngRoute, angularJwt ])
        .config(RoutesConfig)
        .run(RouteProtector)
-       .component('chessBoard', BoardComponent)
+       .component('start', StartComponent)
        .component('createPuzzle', CreateComponent)
        .component('home', HomeComponent)
        .component('login', LoginComponent)

@@ -1,11 +1,10 @@
-/*jshint esversion: 6 */
-const Chess = require('chess.js');
-var ChessBoard = require('chessboardjs');
 
-module.exports = function () {
 
+function StartController() {
+  const Chess = require('chess.js');
+  var ChessBoard = require('chessboardjs');
   var board,
-  game = new Chess('3r2k1/1b3ppp/6n1/1pq1p1P1/8/1QP2P1P/3rNRB1/R4K2 b - - 0 1'),
+  game = new Chess('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'),
   statusEl = $('#status'),
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
@@ -105,3 +104,7 @@ module.exports = function () {
   updateStatus();
 
 };
+
+StartController.$inject = [];
+
+module.exports = StartController;
